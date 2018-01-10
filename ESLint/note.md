@@ -146,3 +146,9 @@ module.exports = {
 2. `Languages&Frameworks>JavaScript>Code Quality Tools>ESLint`开启`ESLint`。
 3. 配置相应路径即可。
 
+# ESLint的三种常见规范
+[Airbnb](https://github.com/airbnb/javascript)
+
+[Google](https://github.com/google/eslint-config-google)
+
+[Standard](https://github.com/standard/standard)
