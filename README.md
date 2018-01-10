@@ -1,2 +1,4 @@
 # EditorConfig-ESLint
-EditorConfig&amp;ESLint 样例学习
+EditorConfig-ESLint 样例学习
+
+1. EditorConfig

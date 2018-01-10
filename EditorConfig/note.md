@@ -65,3 +65,106 @@ indent_size = 2
 最近的`.editorconfig`文件是最后读取的。
 要求的样式风格属性按照它们被读取的顺序被应用。
 因此在更接近的文件中的属性优先。
+
+> Tips: Windows下只要创建一个名为`.editorconfig.`的文件，Windows会自动转成`.editorconfig`。否则会要求你必须键入文件名。
+
+# 常用属性详解
+
+`indent_style`\
+缩进样式\
+属性值不区分大小写，会被核心库统一成小写。\
+可选值:
++ `tab`
++ `space`
+
+支持所有插件。
+
+`indent_size`\
+缩进大小\
+属性值不区分大小写，会被核心库统一成小写。\
+可选值:
++ 一个整数（常用为`2`或`4`）
++ `tab`
+
+
+如果`indent_size`的值为`tab`,那么`indent_size`的具体大小会是`tab_width`指定的一个tab的大小，否则是编辑器本身的一个`tab`大小。
+
+支持所有插件。
+
+`tab_width`\
+一个`tab`的大小\
+可选值:
++ 一个正整数（当`index_size`是个数字时，则默认为`index_size`）
+
+支持所有插件。
+
+`end_of_line`\
+换行符格式\
+属性值不区分大小写，会被核心库统一成小写。\
+可选值:
++ `lf`（Unix格式，只用换行。`\n`，一般用这个）
++ `crlf`（Windows格式，回车换行。`\r\n`）
++ `cr`（Mac格式，只用回车。`\r`）
+
+支持所有插件。
+
+`charset`\
+字符编码\
+属性值不区分大小写，会被核心库统一成小写。\
+可选值:
++ `latin1`
++ `utf-8`（一般用这个）
++ `utf-16be`
++ `utf-16le`
+
+支持所有插件。
+
+`trim_trailing_whitespace`\
+行尾是否允许空格\
+属性值不区分大小写，会被核心库统一成小写。\
+可选值:
++ `true`
++ `false`
+
+支持所有插件。
+
+`insert_final_newline`\
+文件夹末尾是否以空行结束\
+属性值不区分大小写，会被核心库统一成小写。\
+可选值:
++ `true`
++ `false`
+
+支持所有插件。
+
+[更多属性](https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties)
+
+常用`.editorconfig`文件
+```editorcongif
+# http://editorconfig.org
+
+root = true
+
+# 对所有文件生效
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 对后缀名为 md 的文件生效
+[*.md]
+trim_trailing_whitespace = false
+
+```
+
+# 在webstorm中的使用
+
+1. `ctrl+alt+s`打开设置。
+2. `editor>code style`下面有一个`Enable EditorConfig support`选中前面的复选框，启动支持。
+3. 后面有个`export`按钮是用来导出当前IDE的`.editorconfig`配置文件。
+
+之后就可以根据自己的需求来配置`.editorconfig`配置文件。
+`ctrl+alt+L`格式当前文件。
